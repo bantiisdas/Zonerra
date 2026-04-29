@@ -3,3 +3,170 @@
 @import "tailwindcss/utilities.css";
 
 @import "nativewind/theme";
+
+/* =========================
+ZONERRA THEME
+========================= */
+
+@theme {
+  /* Backgrounds */
+  --color-background: #0b0f14;
+  --color-foreground: #e6edf3;
+  --color-card: #121821;
+  --color-muted: #1a2330;
+  --color-muted-foreground: #9aa4b2;
+
+  /* Brand */
+  --color-primary: #00e5a8;
+  --color-primary-dark: #00c896;
+  --color-accent: #3b82f6;
+
+  /* Game / Territory */
+  --color-zone-owned: rgba(0, 229, 168, 0.35);
+  --color-zone-enemy: rgba(255, 77, 77, 0.35);
+  --color-zone-neutral: rgba(255, 255, 255, 0.08);
+  --color-danger: #ff4d4d;
+
+  /* UI */
+  --color-border: #1f2937;
+  --color-success: #22c55e;
+  --color-destructive: #ef4444;
+
+  /* Spacing */
+  --spacing-0: 0px;
+  --spacing-1: 4px;
+  --spacing-2: 8px;
+  --spacing-3: 12px;
+  --spacing-4: 16px;
+  --spacing-5: 20px;
+  --spacing-6: 24px;
+  --spacing-8: 32px;
+  --spacing-10: 40px;
+  --spacing-12: 48px;
+  --spacing-16: 64px;
+
+  /* Fonts */
+  --font-sans: sans-regular;
+  --font-sans-medium: sans-medium;
+  --font-sans-bold: sans-bold;
+}
+
+/* =========================
+COMPONENTS
+========================= */
+
+@layer components {
+  /* Tabs */
+  .tabs-container {
+    @apply flex-row justify-around bg-card border-t border-border py-2;
+  }
+
+  .tabs-icon {
+    @apply size-12 items-center justify-center rounded-full;
+  }
+
+  .tabs-active {
+    @apply bg-primary/20;
+  }
+
+  /* Map */
+  .map-container {
+    @apply flex-1 bg-background;
+  }
+
+  .map-overlay {
+    @apply absolute inset-0;
+  }
+
+  /* Floating Stats */
+  .stats-container {
+    @apply absolute top-12 left-4 right-4 flex-row justify-between rounded-2xl bg-card/80 px-4 py-3;
+  }
+
+  .stat-text {
+    @apply text-sm font-sans-medium text-foreground;
+  }
+
+  /* Run Button */
+  .run-button {
+    @apply absolute bottom-10 self-center rounded-full bg-primary px-8 py-4;
+  }
+
+  .run-button-text {
+    @apply text-lg font-sans-bold text-black;
+  }
+
+  /* Zone Cards */
+  .zone-card {
+    @apply rounded-2xl bg-card p-4 border border-border;
+  }
+
+  .zone-title {
+    @apply text-lg font-sans-bold text-foreground;
+  }
+
+  .zone-meta {
+    @apply text-sm font-sans-medium text-muted-foreground;
+  }
+
+  /* Profile */
+  .profile-card {
+    @apply rounded-2xl bg-card p-5 border border-border;
+  }
+
+  .profile-stat {
+    @apply text-xl font-sans-bold text-primary;
+  }
+
+  /* Alerts */
+  .alert-danger {
+    @apply bg-danger px-4 py-2 rounded-xl;
+  }
+
+  .alert-danger-text {
+    @apply text-white font-sans-bold;
+  }
+
+  /* Buttons */
+  .btn-primary {
+    @apply rounded-2xl bg-primary py-4 items-center;
+  }
+
+  .btn-primary-text {
+    @apply text-black font-sans-bold;
+  }
+
+  .btn-secondary {
+    @apply rounded-2xl border border-border py-4 items-center;
+  }
+
+  .btn-secondary-text {
+    @apply text-foreground font-sans-medium;
+  }
+
+  /* Modal */
+  .modal-overlay {
+    @apply flex-1 bg-black/60;
+  }
+
+  .modal-container {
+    @apply mt-auto rounded-t-3xl bg-card p-5;
+  }
+
+  /* Chips */
+  .chip {
+    @apply rounded-full px-4 py-2 bg-muted border border-border;
+  }
+
+  .chip-active {
+    @apply bg-primary/20 border-primary;
+  }
+
+  .chip-text {
+    @apply text-sm text-muted-foreground;
+  }
+
+  .chip-text-active {
+    @apply text-primary;
+  }
+}
